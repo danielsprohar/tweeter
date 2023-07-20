@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import LeftSidebar from "./components/LeftSidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="container">{children}</main>
+        <div className="w-full h-full flex justify-center items-center relative">
+          <div className="max-w-screen-lg w-full h-full flex relative">
+            <LeftSidebar />
+            <main>{children}</main>
+            <section>Right</section>
+          </div>
+        </div>
       </body>
     </html>
   );

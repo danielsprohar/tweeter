@@ -1,11 +1,11 @@
 import React from "react";
-import CreateTweet from "./components/CreateTweet";
+import ComposeTweet from "./components/ComposeTweet";
 
 export default function Page() {
   return (
     <div>
       <h1 className="text-xl mb-4 font-semibold">Home</h1>
-      <CreateTweet />
+      <ComposeTweet />
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
         commodi libero totam temporibus perferendis modi rem, veritatis corrupti

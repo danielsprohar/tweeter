@@ -53,7 +53,7 @@ export default function Tweet(props: Props) {
         {/* toolbar */}
         <div className="flex items-center justify-between py-3 max-w-md">
           {/* replay */}
-          <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:hover:text-blue-400 hover:text-blue-700 hover:bg-blue-400/20">
+          <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 hover:bg-blue-400/20 hover:text-tweeter-blue">
             <div
               title="Reply"
               aria-label="Reply"
@@ -92,7 +92,7 @@ export default function Tweet(props: Props) {
           </button>
 
           {/* views */}
-          <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:hover:text-blue-400 hover:text-blue-700 hover:bg-blue-400/20">
+          <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 hover:bg-blue-400/20 hover:text-tweeter-blue">
             <div
               className="flex items-center gap-x-2"
               title="View"
@@ -105,7 +105,7 @@ export default function Tweet(props: Props) {
           </button>
 
           {/* share */}
-          <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:hover:text-blue-400 hover:text-blue-700 hover:bg-blue-400/20">
+          <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 hover:bg-blue-400/20 hover:text-tweeter-blue">
             <div title="Share" aria-label="Share" data-testid="upload">
               <BsUpload />
             </div>

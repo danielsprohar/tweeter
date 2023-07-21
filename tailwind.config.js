@@ -10,6 +10,10 @@ export const theme = {
       'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
     },
+    colors: {
+      'silver': '#F7F9F9',
+      'tweeter-blue': '#1D9BF0',
+    }
   },
 };
 export const plugins = [];

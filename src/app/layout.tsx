@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className="w-full h-full flex justify-center items-center relative">
           <div className="max-w-screen-lg w-full h-full flex relative">
             <LeftSidebar />
-            <main>{children}</main>
+            <main className="p-2">{children}</main>
             <section>Right</section>
           </div>
         </div>

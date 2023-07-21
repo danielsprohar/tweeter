@@ -29,7 +29,7 @@ export default function SuggestedProphets() {
       </div>
       <div
         role="button"
-        className="p-3 dark:text-blue-500 text-blue-700 dark:hover:bg-white/10  hover:bg-black/10 cursor-pointer"
+        className="p-3 text-tweeter-blue dark:hover:bg-white/10  hover:bg-black/10 cursor-pointer"
       >
         Show more
       </div>

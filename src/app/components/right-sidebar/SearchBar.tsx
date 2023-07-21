@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
-export default function SearchBar() {
+export default function SearchBar(): React.JSX.Element {
   const defaultWrapperClass =
     "relative rounded-full flex items-center gap-x-4 dark:bg-white/10 bg-gray-100 p-2 border border-transparent";
   const focusedWrapperClass =
@@ -12,15 +12,15 @@ export default function SearchBar() {
   const defaultIconClass = "text-gray-400";
   const focusedIconClass = defaultIconClass + " text-tweeter-blue";
 
-  const [wrapperClass, setWrapperClass] = useState(defaultWrapperClass);
-  const [iconClass, setIconClass] = useState(defaultIconClass);
+  const [wrapperClass, setWrapperClass] = useState<string>(defaultWrapperClass);
+  const [iconClass, setIconClass] = useState<string>(defaultIconClass);
 
-  function handleFocus() {
+  function handleFocus(): void {
     setWrapperClass(focusedWrapperClass);
     setIconClass(focusedIconClass);
   }
 
-  function handleBlur() {
+  function handleBlur(): void {
     setWrapperClass(defaultWrapperClass);
     setIconClass(defaultIconClass);
   }

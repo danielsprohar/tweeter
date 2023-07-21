@@ -23,7 +23,9 @@ export default function RootLayout({
           <div className="max-w-screen-lg w-full h-full flex relative">
             <LeftSidebar />
             <main className="p-2">{children}</main>
-            <section>Right</section>
+            <section>
+              <h2>Right Side</h2>
+            </section>
           </div>
         </div>
       </body>

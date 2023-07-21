@@ -31,40 +31,42 @@ export default function ComposeTweetToolbar() {
       <div className="flex gap-x-2">
         <button
           onClick={uploadMedia}
-          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-blue-700 hover:bg-blue-400/20"
+          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
         >
           <div title="Media" aria-label="Add media">
             <GoFileMedia />
           </div>
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-blue-700 hover:bg-blue-400/20">
+        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
           <div title="GIF" aria-label="Add a GIF">
             <AiOutlineGif />
           </div>
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-blue-700 hover:bg-blue-400/20">
+        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
           <div title="Poll" aria-label="Create a poll">
             <BiPoll />
           </div>
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-blue-700 hover:bg-blue-400/20">
+        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
           <div title="Emoji" aria-label="Add an emoji">
             <FaSmile />
           </div>
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-blue-700 hover:bg-blue-400/20">
+        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
           <div title="Schedule" aria-label="Schedule a tweet">
             <TbCalendarTime />
           </div>
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-blue-700 hover:bg-blue-400/20">
+        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
           <div title="Location" aria-label="Tag location">
             <MdLocationPin />
           </div>
         </button>
       </div>
       <div>
-        <button className="rounded-full bg-blue-500 px-4 py-2">Tweet</button>
+        <button className="rounded-full bg-tweeter-blue text-white px-4 py-2 font-semibold">
+          Tweet
+        </button>
       </div>
     </div>
   );

@@ -5,12 +5,12 @@ import { BsSearch } from "react-icons/bs";
 
 export default function SearchBar() {
   const defaultWrapperClass =
-    "relative rounded-full flex items-center gap-x-4 dark:bg-white/10 p-2 border border-transparent";
+    "relative rounded-full flex items-center gap-x-4 dark:bg-white/10 bg-gray-100 p-2 border border-transparent";
   const focusedWrapperClass =
-    "relative rounded-full flex items-center gap-x-4 dark:bg-white/10 p-2 border border-blue-500";
+    "relative rounded-full flex items-center gap-x-4 dark:bg-white/10 p-2 border border-tweeter-blue";
 
   const defaultIconClass = "text-gray-400";
-  const focusedIconClass = defaultIconClass + " text-blue-500";
+  const focusedIconClass = defaultIconClass + " text-tweeter-blue";
 
   const [wrapperClass, setWrapperClass] = useState(defaultWrapperClass);
   const [iconClass, setIconClass] = useState(defaultIconClass);

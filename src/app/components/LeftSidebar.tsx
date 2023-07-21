@@ -61,7 +61,7 @@ export default function LeftSidebar() {
             </div>
           </Link>
         ))}
-        <button className="w-100 rounded-full mx-4 py-4 text-center bg-blue-500 text-white hover:bg-opacity-80">
+        <button className="w-100 rounded-full mx-4 py-4 text-center bg-tweeter-blue text-white hover:bg-opacity-80 font-semibold">
           Tweet
         </button>
       </div>

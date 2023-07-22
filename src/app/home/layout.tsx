@@ -16,7 +16,7 @@ export default function HomeLayout({
   return (
     <>
       <LeftSidebar />
-      <main className="p-2">
+      <main className="ml-72 p-2">
         <h1 className="text-xl mb-4 font-semibold">Home</h1>
         <ComposeTweet />
         <div>{children}</div>

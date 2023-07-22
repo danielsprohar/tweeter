@@ -45,7 +45,7 @@ const NAVIGATION_ITEMS = [
 
 export default function LeftSidebar() {
   return (
-    <section className="w-72 h-screen flex flex-col border-r border-black/10 dark:border-white/10">
+    <section className="fixed w-72 h-screen flex flex-col border-r border-black/10 dark:border-white/10">
       <div className="flex flex-col gap-y-4 items-stretch h-screen">
         <div className="py-2 px-4 text-3xl">
           <FaTwitter />

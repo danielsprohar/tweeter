@@ -1,5 +1,4 @@
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link'
 import {
   FaBell,
   FaBookmark,
@@ -8,40 +7,41 @@ import {
   FaHome,
   FaTwitter,
   FaUser,
-} from "react-icons/fa";
+} from 'react-icons/fa'
 
-import { CgMoreO } from "react-icons/cg";
+import { CgMoreO } from 'react-icons/cg'
+import AccountMenu from './AccountMenu'
 
 const NAVIGATION_ITEMS = [
   {
-    title: "Home",
+    title: 'Home',
     icon: FaHome,
   },
   {
-    title: "Explore",
+    title: 'Explore',
     icon: FaHashtag,
   },
   {
-    title: "Notifications",
+    title: 'Notifications',
     icon: FaBell,
   },
   {
-    title: "Messages",
+    title: 'Messages',
     icon: FaEnvelope,
   },
   {
-    title: "Bookmarks",
+    title: 'Bookmarks',
     icon: FaBookmark,
   },
   {
-    title: "Profile",
+    title: 'Profile',
     icon: FaUser,
   },
   {
-    title: "More",
+    title: 'More',
     icon: CgMoreO,
   },
-];
+]
 
 export default function LeftSidebar() {
   return (
@@ -65,13 +65,7 @@ export default function LeftSidebar() {
           Tweet
         </button>
       </div>
-      <button className="rounded-full flex items-center gap-x-2 m-4 p-4 bg-transparent text-center dark:hover:bg-white/10 hover:bg-black/10 transition duration-200">
-        <div className="rounded-full bg-slate-400 w-8 h-8"></div>
-        <div className="text-left text-xs">
-          <div className="font-semibold">Profile</div>
-          <div className="dark:text-gray-400 text-gray-600">@user_handle</div>
-        </div>
-      </button>
+      <AccountMenu />
     </section>
-  );
+  )
 }

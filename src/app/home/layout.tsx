@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react';
 import ComposeTweet from '../components/ComposeTweet';
-import LeftSidebar from '../components/LeftSidebar';
+import LeftSidebar from '../components/left-sidebar/LeftSidebar';
 import RightSidebar from '../components/right-sidebar/RightSidebar';
 
 export const metadata: Metadata = {

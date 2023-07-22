@@ -1,10 +1,10 @@
 import Link from 'next/link'
+import { BiSolidHomeCircle } from 'react-icons/bi'
 import {
   FaBell,
   FaBookmark,
   FaEnvelope,
   FaHashtag,
-  FaHome,
   FaTwitter,
   FaUser,
 } from 'react-icons/fa'
@@ -15,7 +15,7 @@ import AccountMenu from './AccountMenu'
 const NAVIGATION_ITEMS = [
   {
     title: 'Home',
-    icon: FaHome,
+    icon: BiSolidHomeCircle,
   },
   {
     title: 'Explore',
@@ -54,7 +54,7 @@ export default function LeftSidebar() {
           <Link
             key={item.title}
             href={item.title.toLowerCase()}
-            className="dark:hover:bg-white/10  hover:bg-black/10 transition duration-200 px-4 py-2 rounded-full"
+            className="dark:hover:bg-white/10 hover:bg-black/10 transition duration-200 px-4 py-2 rounded-full text-lg"
           >
             <div className="flex items-center gap-x-4">
               <item.icon /> <span>{item.title}</span>

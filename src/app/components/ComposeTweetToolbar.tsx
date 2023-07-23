@@ -1,29 +1,36 @@
-"use client";
+'use client'
 
-import React from "react";
-import { AiOutlineGif } from "react-icons/ai";
-import { BiPoll } from "react-icons/bi";
-import { FaSmile } from "react-icons/fa";
-import { GoFileMedia } from "react-icons/go";
-import { MdLocationPin } from "react-icons/md";
-import { TbCalendarTime } from "react-icons/tb";
+import { useRouter } from 'next/navigation'
+import React from 'react'
+import { AiOutlineGif } from 'react-icons/ai'
+import { BiPoll } from 'react-icons/bi'
+import { FaSmile } from 'react-icons/fa'
+import { GoFileMedia } from 'react-icons/go'
+import { MdLocationPin } from 'react-icons/md'
+import { TbCalendarTime } from 'react-icons/tb'
 
 export default function ComposeTweetToolbar() {
+  const router = useRouter()
+
   function uploadMedia() {
-    const input = document.createElement("input");
+    const input = document.createElement('input')
 
-    input.type = "file";
-    input.accept = "image/png, image/jpeg";
+    input.type = 'file'
+    input.accept = 'image/png, image/jpeg'
     input.onchange = (_) => {
-      console.log(input.files);
-      const file = input.files?.item(0);
+      console.log(input.files)
+      const file = input.files?.item(0)
       if (file) {
-        console.log("file.name", file.name);
-        console.log("file.size", file.size);
+        console.log('file.name', file.name)
+        console.log('file.size', file.size)
       }
-    };
+    }
 
-    input.click();
+    input.click()
+  }
+
+  function openGiphyGrid() {
+    router.push('/i/foundmedia/search')
   }
 
   return (
@@ -31,36 +38,47 @@ export default function ComposeTweetToolbar() {
       <div className="flex gap-x-2">
         <button
           onClick={uploadMedia}
+          title="Media"
+          aria-label="Add media"
           className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
         >
-          <div title="Media" aria-label="Add media">
-            <GoFileMedia />
-          </div>
+          <GoFileMedia />
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
-          <div title="GIF" aria-label="Add a GIF">
-            <AiOutlineGif />
-          </div>
+        <button
+          onClick={openGiphyGrid}
+          title="GIF"
+          aria-label="Add a GIF"
+          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
+        >
+          <AiOutlineGif />
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
-          <div title="Poll" aria-label="Create a poll">
-            <BiPoll />
-          </div>
+        <button
+          title="Poll"
+          aria-label="Create a poll"
+          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
+        >
+          <BiPoll />
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
-          <div title="Emoji" aria-label="Add an emoji">
-            <FaSmile />
-          </div>
+        <button
+          title="Emoji"
+          aria-label="Add an emoji"
+          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
+        >
+          <FaSmile />
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
-          <div title="Schedule" aria-label="Schedule a tweet">
-            <TbCalendarTime />
-          </div>
+        <button
+          title="Schedule"
+          aria-label="Schedule a tweet"
+          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
+        >
+          <TbCalendarTime />
         </button>
-        <button className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20">
-          <div title="Location" aria-label="Tag location">
-            <MdLocationPin />
-          </div>
+        <button
+          title="Location"
+          aria-label="Tag location"
+          className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"
+        >
+          <MdLocationPin />
         </button>
       </div>
       <div>
@@ -69,5 +87,5 @@ export default function ComposeTweetToolbar() {
         </button>
       </div>
     </div>
-  );
+  )
 }

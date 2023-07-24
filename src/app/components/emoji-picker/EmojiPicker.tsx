@@ -2,6 +2,7 @@
 
 import { MouseEvent, useState } from 'react'
 import { EmojiCategory } from '../../enums/emoji-category'
+import ActivityEmojis from './ActivityEmojis'
 import AnimalsAndNatureEmojis from './AnimalsAndNatureEmojis'
 import FoodAndDrinkEmojis from './FoodAndDrinkEmojis'
 import SmileysAndPeopleEmojis from './SmileysAndPeopleEmojis'
@@ -44,6 +45,13 @@ export default function EmojiPicker() {
     }
   }
 
+  function scrollToActivityCategory() {
+    const element = document.getElementById(EmojiCategory.ACTIVITY)
+    if (element) {
+      element.scrollIntoView()
+    }
+  }
+
   return (
     <div className="w-fit rounded-xl shadow-lg dark:shadow-white dark:shadow z-10">
       <div className="flex flex-col overflow-x-hidden shadow-inner rounded-xl">
@@ -51,6 +59,7 @@ export default function EmojiPicker() {
         <div className="flex items-center gap-x-2 text-center p-2">
           <button
             className="emoji-btn"
+            title='Smileys & people'
             onClick={scrollToSmileysAndPeopleCategory}
             aria-label={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
           >
@@ -58,6 +67,7 @@ export default function EmojiPicker() {
           </button>
           <button
             className="emoji-btn"
+            title='Animals & nature'
             onClick={scrollToAnimalsAndNatureCategory}
             aria-label={`${EmojiCategory.ANIMALS_AND_NATURE}`}
           >
@@ -65,6 +75,7 @@ export default function EmojiPicker() {
           </button>
           <button
             className="emoji-btn"
+            title='Food & drink'
             onClick={scrollToFoodAndDrinkCategory}
             aria-label={`${EmojiCategory.FOOD_AND_DRINK}`}
           >
@@ -72,12 +83,15 @@ export default function EmojiPicker() {
           </button>
           <button
             className="emoji-btn"
+            title='Activity'
+            onClick={scrollToActivityCategory}
             aria-label={`${EmojiCategory.ACTIVITY}`}
           >
             ⚽
           </button>
           <button
             className="emoji-btn"
+            title='Travel & places'
             aria-label={`${EmojiCategory.TRAVEL_AND_PLACES}`}
           >
             🚗
@@ -132,6 +146,16 @@ export default function EmojiPicker() {
                 {EmojiCategory.FOOD_AND_DRINK}
               </div>
               <FoodAndDrinkEmojis />
+            </div>
+
+            {/* Activity */}
+            <div
+              role="group"
+              aria-label={`${EmojiCategory.ACTIVITY}`}
+              id={`${EmojiCategory.ACTIVITY}`}
+            >
+              <div className="text-xl font-bold">{EmojiCategory.ACTIVITY}</div>
+              <ActivityEmojis />
             </div>
           </div>
         </div>

@@ -18,3 +18,12 @@ body {
   color: var(--color-foreground);
   background-color: var(--color-background);
 }
+
+/* https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply */
+
+@layer components {
+  .emoji-btn {
+    padding: 2px;
+    @apply rounded hover:bg-black/10 dark:hover:bg-white/10
+  }
+}

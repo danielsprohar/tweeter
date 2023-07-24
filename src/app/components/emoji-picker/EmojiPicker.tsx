@@ -1,11 +1,18 @@
 'use client'
 
+import activityEmojis from '@/../json/emojis/activities.json'
+import animalsNatureEmojis from '@/../json/emojis/animals-nature.json'
+import foodDrinkEmojis from '@/../json/emojis/food-drink.json'
+import objectsEmojis from '@/../json/emojis/objects.json'
+import peopleEmojis from '@/../json/emojis/people.json'
+import smileysEmojis from '@/../json/emojis/smileys.json'
+import symbolsEmojis from '@/../json/emojis/symbols.json'
+import travelPlacesEmojis from '@/../json/emojis/travel-places.json'
+
 import { MouseEvent, useState } from 'react'
 import { EmojiCategory } from '../../enums/emoji-category'
-import ActivityEmojis from './ActivityEmojis'
-import AnimalsAndNatureEmojis from './AnimalsAndNatureEmojis'
-import FoodAndDrinkEmojis from './FoodAndDrinkEmojis'
-import SmileysAndPeopleEmojis from './SmileysAndPeopleEmojis'
+import EmojiCategoryButtons from './EmojiCategoryButtons'
+import EmojiCategoryGrid from './EmojiCategoryGrid'
 
 export default function EmojiPicker() {
   const [emojiHTML, setEmojiHTML] = useState<string>('')
@@ -24,88 +31,28 @@ export default function EmojiPicker() {
     // Set "aria-selected=true"
   }
 
-  function scrollToSmileysAndPeopleCategory() {
-    const element = document.getElementById(EmojiCategory.SMILEYS_AND_PEOPLE)
-    if (element) {
-      element.scrollIntoView()
-    }
-  }
-
-  function scrollToAnimalsAndNatureCategory() {
-    const element = document.getElementById(EmojiCategory.ANIMALS_AND_NATURE)
-    if (element) {
-      element.scrollIntoView()
-    }
-  }
-
-  function scrollToFoodAndDrinkCategory() {
-    const element = document.getElementById(EmojiCategory.FOOD_AND_DRINK)
-    if (element) {
-      element.scrollIntoView()
-    }
-  }
-
-  function scrollToActivityCategory() {
-    const element = document.getElementById(EmojiCategory.ACTIVITY)
-    if (element) {
-      element.scrollIntoView()
-    }
-  }
-
   return (
     <div className="w-fit rounded-xl shadow-lg dark:shadow-white dark:shadow z-10">
       <div className="flex flex-col overflow-x-hidden shadow-inner rounded-xl">
-        <div>Search bar</div>
-        <div className="flex items-center gap-x-2 text-center p-2">
-          <button
-            className="emoji-btn"
-            title='Smileys & people'
-            onClick={scrollToSmileysAndPeopleCategory}
-            aria-label={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
-          >
-            😀
-          </button>
-          <button
-            className="emoji-btn"
-            title='Animals & nature'
-            onClick={scrollToAnimalsAndNatureCategory}
-            aria-label={`${EmojiCategory.ANIMALS_AND_NATURE}`}
-          >
-            🐻
-          </button>
-          <button
-            className="emoji-btn"
-            title='Food & drink'
-            onClick={scrollToFoodAndDrinkCategory}
-            aria-label={`${EmojiCategory.FOOD_AND_DRINK}`}
-          >
-            🍔
-          </button>
-          <button
-            className="emoji-btn"
-            title='Activity'
-            onClick={scrollToActivityCategory}
-            aria-label={`${EmojiCategory.ACTIVITY}`}
-          >
-            ⚽
-          </button>
-          <button
-            className="emoji-btn"
-            title='Travel & places'
-            aria-label={`${EmojiCategory.TRAVEL_AND_PLACES}`}
-          >
-            🚗
-          </button>
-          <button className="emoji-btn" aria-label={`${EmojiCategory.OBJECTS}`}>
-            💡
-          </button>
-          <button className="emoji-btn" aria-label={`${EmojiCategory.SYMBOLS}`}>
-            ⚛️
-          </button>
+        {/* Search bar */}
+        <div className="p-2">
+          <div className="flex items-center gap-x-2">
+            <input
+              type="text"
+              placeholder="Search emojis"
+              className="w-full rounded-full outline-none border bg-inherit dark:border-white/10 border-black/10 text-inherit p-2 focus:border-tweeter-blue"
+            />
+          </div>
         </div>
 
+        {/* Button bar */}
+        <EmojiCategoryButtons />
+
         {/* Emoji grid */}
-        <div role="listbox" className="w-[320px] h-[250px] overflow-y-scroll">
+        <div
+          role="listbox"
+          className="w-[320px] h-[250px] overflow-y-scroll border-y dark:border-white/10"
+        >
           {/* Wrapper */}
           <div
             onClick={handleSelectedEmoji}
@@ -113,50 +60,46 @@ export default function EmojiPicker() {
             className="flex flex-col gap-y-4 px-2"
           >
             {/* Smileys & people */}
-            <div
-              role="group"
-              aria-label={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
-              id={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
-            >
-              <div className="text-xl font-bold">
-                {EmojiCategory.SMILEYS_AND_PEOPLE}
-              </div>
-              <SmileysAndPeopleEmojis />
-            </div>
+            <EmojiCategoryGrid
+              category={EmojiCategory.SMILEYS_AND_PEOPLE}
+              emojis={[...smileysEmojis, ...peopleEmojis]}
+            />
 
             {/* Animals & nature */}
-            <div
-              role="group"
-              aria-label={`${EmojiCategory.ANIMALS_AND_NATURE}`}
-              id={`${EmojiCategory.ANIMALS_AND_NATURE}`}
-            >
-              <div className="text-xl font-bold">
-                {EmojiCategory.ANIMALS_AND_NATURE}
-              </div>
-              <AnimalsAndNatureEmojis />
-            </div>
+            <EmojiCategoryGrid
+              category={EmojiCategory.ANIMALS_AND_NATURE}
+              emojis={animalsNatureEmojis}
+            />
 
             {/* Food & drink */}
-            <div
-              role="group"
-              aria-label={`${EmojiCategory.FOOD_AND_DRINK}`}
-              id={`${EmojiCategory.FOOD_AND_DRINK}`}
-            >
-              <div className="text-xl font-bold">
-                {EmojiCategory.FOOD_AND_DRINK}
-              </div>
-              <FoodAndDrinkEmojis />
-            </div>
+            <EmojiCategoryGrid
+              category={EmojiCategory.FOOD_AND_DRINK}
+              emojis={foodDrinkEmojis}
+            />
 
             {/* Activity */}
-            <div
-              role="group"
-              aria-label={`${EmojiCategory.ACTIVITY}`}
-              id={`${EmojiCategory.ACTIVITY}`}
-            >
-              <div className="text-xl font-bold">{EmojiCategory.ACTIVITY}</div>
-              <ActivityEmojis />
-            </div>
+            <EmojiCategoryGrid
+              category={EmojiCategory.ACTIVITY}
+              emojis={activityEmojis}
+            />
+
+            {/* Travel & places */}
+            <EmojiCategoryGrid
+              category={EmojiCategory.TRAVEL_AND_PLACES}
+              emojis={travelPlacesEmojis}
+            />
+
+            {/* Objects */}
+            <EmojiCategoryGrid
+              category={EmojiCategory.OBJECTS}
+              emojis={objectsEmojis}
+            />
+
+            {/* Symbols */}
+            <EmojiCategoryGrid
+              category={EmojiCategory.SYMBOLS}
+              emojis={symbolsEmojis}
+            />
           </div>
         </div>
 

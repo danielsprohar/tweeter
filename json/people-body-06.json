@@ -1,0 +1,252 @@
+{
+  "name": "people-body-06",
+  "columns": 16,
+  "rows": 5,
+  "width": 1152,
+  "height": 360,
+  "emojiSize": 72,
+  "emojis": [
+    {
+      "emoji": {
+        "emoji": "🤴",
+        "hexcode": "1F934",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "prince",
+        "tags": "prince",
+        "openmoji_tags": "prince, charming, crown, fairy tale, fantasy, pink",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "🤴",
+        "skintone_base_hexcode": "1F934",
+        "unicode": 3,
+        "order": 1355
+      },
+      "top": 0,
+      "left": 0,
+      "index": 0
+    },
+    {
+      "emoji": {
+        "emoji": "👸",
+        "hexcode": "1F478",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "princess",
+        "tags": "fairy tale, fantasy",
+        "openmoji_tags": "fairy tale, fantasy, crown, pink dress, princess crown",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "👸",
+        "skintone_base_hexcode": "1F478",
+        "unicode": 0.6,
+        "order": 1361
+      },
+      "top": 0,
+      "left": 432,
+      "index": 6
+    },
+    {
+      "emoji": {
+        "emoji": "👳",
+        "hexcode": "1F473",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "person wearing turban",
+        "tags": "turban",
+        "openmoji_tags": "man, beard, turban, religion",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "👳",
+        "skintone_base_hexcode": "1F473",
+        "unicode": 0.6,
+        "order": 1367
+      },
+      "top": 0,
+      "left": 864,
+      "index": 12
+    },
+    {
+      "emoji": {
+        "emoji": "👳‍♂️",
+        "hexcode": "1F473-200D-2642-FE0F",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "man wearing turban",
+        "tags": "man, turban",
+        "openmoji_tags": "",
+        "openmoji_author": "Antonia Wagner",
+        "openmoji_date": "2019-05-03",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "👳‍♂️",
+        "skintone_base_hexcode": "1F473-200D-2642-FE0F",
+        "unicode": 4,
+        "order": 1373
+      },
+      "top": 72,
+      "left": 144,
+      "index": 18
+    },
+    {
+      "emoji": {
+        "emoji": "👳‍♀️",
+        "hexcode": "1F473-200D-2640-FE0F",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "woman wearing turban",
+        "tags": "turban, woman",
+        "openmoji_tags": "",
+        "openmoji_author": "Antonia Wagner",
+        "openmoji_date": "2019-05-03",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "👳‍♀️",
+        "skintone_base_hexcode": "1F473-200D-2640-FE0F",
+        "unicode": 4,
+        "order": 1385
+      },
+      "top": 72,
+      "left": 576,
+      "index": 24
+    },
+    {
+      "emoji": {
+        "emoji": "👲",
+        "hexcode": "1F472",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "person with skullcap",
+        "tags": "cap, gua pi mao, hat, person, skullcap",
+        "openmoji_tags": "",
+        "openmoji_author": "Anne Frauendorf",
+        "openmoji_date": "2018-11-16",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "👲",
+        "skintone_base_hexcode": "1F472",
+        "unicode": 0.6,
+        "order": 1397
+      },
+      "top": 72,
+      "left": 1008,
+      "index": 30
+    },
+    {
+      "emoji": {
+        "emoji": "🧕",
+        "hexcode": "1F9D5",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "woman with headscarf",
+        "tags": "headscarf, hijab, mantilla, tichel",
+        "openmoji_tags": "headscarf, hijab, mantilla, religion, religious, muslim",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "🧕",
+        "skintone_base_hexcode": "1F9D5",
+        "unicode": 5,
+        "order": 1403
+      },
+      "top": 144,
+      "left": 288,
+      "index": 36
+    },
+    {
+      "emoji": {
+        "emoji": "🤵",
+        "hexcode": "1F935",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "person in tuxedo",
+        "tags": "groom, person, tuxedo",
+        "openmoji_tags": "",
+        "openmoji_author": "Nadine Bartel",
+        "openmoji_date": "2019-05-06",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "🤵",
+        "skintone_base_hexcode": "1F935",
+        "unicode": 3,
+        "order": 1409
+      },
+      "top": 144,
+      "left": 720,
+      "index": 42
+    },
+    {
+      "emoji": {
+        "emoji": "👰",
+        "hexcode": "1F470",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "person with veil",
+        "tags": "bride, person, veil, wedding",
+        "openmoji_tags": "bride, veil, wedding, woman, female, marriage, married, love, wedding dress",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "👰",
+        "skintone_base_hexcode": "1F470",
+        "unicode": 0.6,
+        "order": 1439
+      },
+      "top": 216,
+      "left": 0,
+      "index": 48
+    },
+    {
+      "emoji": {
+        "emoji": "🤰",
+        "hexcode": "1F930",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "pregnant woman",
+        "tags": "pregnant, woman",
+        "openmoji_tags": "pregnant, woman, child, birth, love, mother, motherhood, trust, baby",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "🤰",
+        "skintone_base_hexcode": "1F930",
+        "unicode": 3,
+        "order": 1469
+      },
+      "top": 216,
+      "left": 432,
+      "index": 54
+    },
+    {
+      "emoji": {
+        "emoji": "🤱",
+        "hexcode": "1F931",
+        "group": "people-body",
+        "subgroups": "person-role",
+        "annotation": "breast-feeding",
+        "tags": "baby, breast, nursing",
+        "openmoji_tags": "baby, breast, nursing, love, trust, mother, motherhood",
+        "openmoji_author": "Lisa Thiel",
+        "openmoji_date": "2018-04-18",
+        "skintone": "",
+        "skintone_combination": "single",
+        "skintone_base_emoji": "🤱",
+        "skintone_base_hexcode": "1F931",
+        "unicode": 5,
+        "order": 1475
+      },
+      "top": 216,
+      "left": 864,
+      "index": 60
+    }
+  ]
+}

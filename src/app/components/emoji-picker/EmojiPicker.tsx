@@ -3,6 +3,7 @@
 import { MouseEvent, useState } from 'react'
 import { EmojiCategory } from '../../enums/emoji-category'
 import AnimalsAndNatureEmojis from './AnimalsAndNatureEmojis'
+import FoodAndDrinkEmojis from './FoodAndDrinkEmojis'
 import SmileysAndPeopleEmojis from './SmileysAndPeopleEmojis'
 
 export default function EmojiPicker() {
@@ -19,6 +20,7 @@ export default function EmojiPicker() {
 
   function handleSelectedEmoji(e: MouseEvent) {
     // TODO: Set the selected emoji
+    // Set "aria-selected=true"
   }
 
   function scrollToSmileysAndPeopleCategory() {
@@ -35,27 +37,35 @@ export default function EmojiPicker() {
     }
   }
 
+  function scrollToFoodAndDrinkCategory() {
+    const element = document.getElementById(EmojiCategory.FOOD_AND_DRINK)
+    if (element) {
+      element.scrollIntoView()
+    }
+  }
+
   return (
-    <div className="w-fit rounded-xl shadow-lg dark:shadow-white z-10">
+    <div className="w-fit rounded-xl shadow-lg dark:shadow-white dark:shadow z-10">
       <div className="flex flex-col overflow-x-hidden shadow-inner rounded-xl">
         <div>Search bar</div>
         <div className="flex items-center gap-x-2 text-center p-2">
           <button
-            onClick={scrollToSmileysAndPeopleCategory}
             className="emoji-btn"
+            onClick={scrollToSmileysAndPeopleCategory}
             aria-label={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
           >
             😀
           </button>
           <button
-            onClick={scrollToAnimalsAndNatureCategory}
             className="emoji-btn"
+            onClick={scrollToAnimalsAndNatureCategory}
             aria-label={`${EmojiCategory.ANIMALS_AND_NATURE}`}
           >
             🐻
           </button>
           <button
             className="emoji-btn"
+            onClick={scrollToFoodAndDrinkCategory}
             aria-label={`${EmojiCategory.FOOD_AND_DRINK}`}
           >
             🍔
@@ -90,22 +100,38 @@ export default function EmojiPicker() {
           >
             {/* Smileys & people */}
             <div
-              aria-label={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
               role="group"
+              aria-label={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
               id={`${EmojiCategory.SMILEYS_AND_PEOPLE}`}
             >
-              <div className="text-xl font-bold">{`Smileys & Places`}</div>
+              <div className="text-xl font-bold">
+                {EmojiCategory.SMILEYS_AND_PEOPLE}
+              </div>
               <SmileysAndPeopleEmojis />
             </div>
 
             {/* Animals & nature */}
             <div
-              aria-label={`${EmojiCategory.ANIMALS_AND_NATURE}`}
               role="group"
+              aria-label={`${EmojiCategory.ANIMALS_AND_NATURE}`}
               id={`${EmojiCategory.ANIMALS_AND_NATURE}`}
             >
-              <div className="text-xl font-bold">{`Animals & nature`}</div>
+              <div className="text-xl font-bold">
+                {EmojiCategory.ANIMALS_AND_NATURE}
+              </div>
               <AnimalsAndNatureEmojis />
+            </div>
+
+            {/* Food & drink */}
+            <div
+              role="group"
+              aria-label={`${EmojiCategory.FOOD_AND_DRINK}`}
+              id={`${EmojiCategory.FOOD_AND_DRINK}`}
+            >
+              <div className="text-xl font-bold">
+                {EmojiCategory.FOOD_AND_DRINK}
+              </div>
+              <FoodAndDrinkEmojis />
             </div>
           </div>
         </div>

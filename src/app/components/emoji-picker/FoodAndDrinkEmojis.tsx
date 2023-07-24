@@ -1,10 +1,10 @@
 import React from 'react'
-import animalsAndNature from '../../../../json/animals-nature-00.json'
+import data from '../../../../json/food-drink-00.json'
 
-export default function AnimalsAndNatureEmojis() {
+export default function FoodAndDrinkEmojis() {
   return (
     <div className="emojis-container">
-      {animalsAndNature.emojis.map((item) => (
+      {data.emojis.map((item) => (
         <div
           role="option"
           key={item.emoji.annotation}

@@ -16,7 +16,7 @@ import smileys from '../../../../json/smileys-emotion-00.json'
 
 export default function SmileysAndPeopleEmojis() {
   return (
-    <div className="grid grid-cols-9 cursor-pointer text-center ">
+    <div className="emojis-container">
       {smileys.emojis.map((item) => (
         <div
           role="option"

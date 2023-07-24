@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { FaTwitter } from 'react-icons/fa'
+import EmojiPicker from './components/emoji-picker/EmojiPicker'
 
 export default function Page() {
   return (
@@ -35,6 +36,10 @@ export default function Page() {
           Right in the Tweeter
         </h1>
         <p>Come check it out.</p>
+
+        <div>
+          <EmojiPicker />
+        </div>
       </main>
     </div>
   )

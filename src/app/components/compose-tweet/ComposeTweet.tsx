@@ -2,9 +2,11 @@
 
 import { SyntheticEvent, useState } from 'react'
 import ComposeTweetToolbar from './ComposeTweetToolbar'
+import TweetPoll from '../tweet-poll/TweetPoll'
 
 export default function ComposeTweet() {
   const [hashtags, setHashtags] = useState<string[]>([])
+  const [hasPoll, setHasPoll] = useState<boolean>(false)
   const hashtagRegex = new RegExp(/(#)\w+/, 'g')
 
   function handleInput(event: SyntheticEvent) {
@@ -44,7 +46,10 @@ export default function ComposeTweet() {
               ))}
             </div>
           </div>
-          <ComposeTweetToolbar />
+          <div className={hasPoll ? '' : 'hidden'}>
+            <TweetPoll onClosePoll={() => setHasPoll(false)} />
+          </div>
+          <ComposeTweetToolbar onOpenPoll={() => setHasPoll(true)} />
         </div>
       </div>
     </div>

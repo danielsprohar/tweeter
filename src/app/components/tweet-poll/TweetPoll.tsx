@@ -5,7 +5,11 @@ import { MdAdd } from 'react-icons/md'
 import { FormGroup } from '../../interfaces/form-group'
 import { FormControl } from '../../interfaces/form-control'
 
-export default function TweetPoll() {
+interface TweetPollProps {
+  onClosePoll: () => void
+}
+
+export default function TweetPoll({ onClosePoll }: TweetPollProps) {
   const form: FormGroup = {
     controls: [
       { id: 'choice1', type: 'text', placeholder: 'Choice 1', value: null },
@@ -31,20 +35,20 @@ export default function TweetPoll() {
   }
 
   return (
-    <div className="flex flex-col border rounded-xl overflow-hidden">
+    <div className="flex flex-col border border-black/10 rounded-xl overflow-hidden dark:border-white/10">
       {/* Choices container */}
       <div className="flex">
         {/* Choices */}
-        <div className="flex flex-col gap-y-4 p-2">
+        <div className="flex flex-col flex-grow gap-y-4 px-2 py-4">
           {formGroup.controls.map((control: FormControl, index: number) => (
             <div className="flex" key={index}>
-              <label htmlFor={`control.name`}>
+              <label htmlFor={`control.name`} className="w-full">
                 <input
                   type={control.type}
                   name={control.name ?? control.id}
                   id={control.id}
                   placeholder={control.placeholder}
-                  className="w-full outline-none border rounded focus:border-2 focus:border-tweeter-blue p-2 bg-inherit"
+                  className="w-full form-field"
                 />
               </label>
             </div>
@@ -53,7 +57,7 @@ export default function TweetPoll() {
 
         {/* button */}
         <div className="flex flex-col p-2 justify-end">
-          <div className="rounded-full mb-1">
+          <div className="rounded-full mb-3">
             <button
               onClick={handleAddChoice}
               title="Add"
@@ -67,12 +71,12 @@ export default function TweetPoll() {
       </div>
 
       {/* Poll duration */}
-      <div className="flex flex-col px-2 py-4 border-y">
+      <div className="flex flex-col px-2 py-4 border-y border-black/10 dark:border-white/10">
         <div>
           <span>Poll length</span>
         </div>
         <div className="flex items-center gap-x-2">
-          <div className="flex flex-col flex-grow border rounded">
+          <div className="flex flex-col flex-grow border rounded border-black/10 dark:border-white/10">
             <label
               className="text-sm text-gray-500 px-2 pt-1"
               htmlFor="pollDays"
@@ -83,6 +87,7 @@ export default function TweetPoll() {
               className="bg-inherit outline-none px-2 pb-1 pr-1"
               name="pollDays"
               id="pollDays"
+              defaultValue={1}
             >
               {Array.from({ length: 8 }).map((_, index) => (
                 <option
@@ -95,7 +100,7 @@ export default function TweetPoll() {
               ))}
             </select>
           </div>
-          <div className="flex flex-col flex-grow border rounded">
+          <div className="flex flex-col flex-grow border rounded border-black/10 dark:border-white/10">
             <label
               className="text-sm text-gray-500 px-2 pt-1"
               htmlFor="pollHours"
@@ -118,7 +123,7 @@ export default function TweetPoll() {
               ))}
             </select>
           </div>
-          <div className="flex flex-col flex-grow border rounded">
+          <div className="flex flex-col flex-grow border rounded border-black/10 dark:border-white/10">
             <label
               className="text-sm text-gray-500 px-2 pt-1"
               htmlFor="pollMinutes"
@@ -146,7 +151,10 @@ export default function TweetPoll() {
 
       {/* Actions */}
       <div className="flex">
-        <button className="w-full text-center text-red-500 p-2 hover:bg-red-50">
+        <button
+          onClick={onClosePoll}
+          className="w-full text-center text-red-500 p-2 hover:bg-red-50 dark:hover:bg-red-900/10"
+        >
           Remove poll
         </button>
       </div>

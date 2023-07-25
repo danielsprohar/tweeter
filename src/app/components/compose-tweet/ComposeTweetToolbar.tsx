@@ -10,7 +10,13 @@ import { TbCalendarTime } from 'react-icons/tb'
 import EmojiPicker from '../emoji-picker/EmojiPicker'
 import { useState } from 'react'
 
-export default function ComposeTweetToolbar() {
+interface ComposeTweetToolbarProps {
+  onOpenPoll: () => void
+}
+
+export default function ComposeTweetToolbar({
+  onOpenPoll,
+}: ComposeTweetToolbarProps) {
   const [openEmojiPicker, setOpenEmojiPicker] = useState<boolean>(false)
   const router = useRouter()
 
@@ -54,6 +60,7 @@ export default function ComposeTweetToolbar() {
           <AiOutlineGif />
         </button>
         <button
+          onClick={onOpenPoll}
           title="Poll"
           aria-label="Create a poll"
           className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"

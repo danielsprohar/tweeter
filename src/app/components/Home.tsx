@@ -1,5 +1,5 @@
 import React from 'react'
-import ComposeTweet from './ComposeTweet'
+import ComposeTweet from './compose-tweet/ComposeTweet'
 import LeftSidebar from './left-sidebar/LeftSidebar'
 import RightSidebar from './right-sidebar/RightSidebar'
 import Tweet from './Tweet'

@@ -22,4 +22,7 @@ body {
 /* https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply */
 
 @layer components {
+  .form-field {
+    @apply outline-none border rounded focus:border-2 focus:border-tweeter-blue p-2 bg-inherit border-black/10 dark:border-white/10;
+  }
 }

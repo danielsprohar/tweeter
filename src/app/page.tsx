@@ -1,21 +1,23 @@
 import Link from 'next/link'
 import { FaTwitter } from 'react-icons/fa'
-import TweetPoll from './components/tweet-poll/TweetPoll'
+import ScheduledTweet from './components/scheduled-tweet/ScheduledTweet'
 
 export default function Page() {
   return (
     <div className="flex flex-col w-full">
-      <header className="border-b border-inherit">
+      <header className="border-b border-black/10 dark:border-white/10">
         <nav className="flex items-center p-2">
           <div className="py-2 px-4 text-3xl">
             <Link href={'/home'}>
-              <FaTwitter />
+              <div className="text-tweeter-blue">
+                <FaTwitter />
+              </div>
             </Link>
           </div>
           <ul className="flex items-center gap-x-2 list-none ms-auto">
             <li>
               <Link
-                className="px-4 py-2 border rounded hover:bg-black/10 dark:hover:bg-white/10"
+                className="px-4 py-2 border dark:border-white/10 border-black/10 rounded hover:bg-black/10 dark:hover:bg-white/10"
                 href={`/login`}
               >
                 Sign in
@@ -33,14 +35,13 @@ export default function Page() {
         </nav>
       </header>
       <main className="p-2">
-        <h1 className="text-xl text-tweeter-blue">
+        <h1 className="text-2xl text-tweeter-blue text-center">
           <span dangerouslySetInnerHTML={{ __html: '&#35;' }}></span>
-          Right in the Tweeter
+          RightInTheTweeter
         </h1>
-        <p>Come check it out.</p>
 
         <div className="flex items-center justify-center mt-4">
-          <TweetPoll />
+          <ScheduledTweet />
         </div>
       </main>
     </div>

@@ -29,6 +29,10 @@ export default function EmojiPicker() {
   function handleSelectedEmoji(e: MouseEvent) {
     // TODO: Set the selected emoji
     // Set "aria-selected=true"
+    const emojiDiv = e.target as HTMLDivElement
+    if (emojiDiv) {
+      console.log(emojiDiv.innerHTML)
+    }
   }
 
   return (
@@ -104,7 +108,7 @@ export default function EmojiPicker() {
         </div>
 
         {/* Emoji preview */}
-        <div className="flex items-center justify-between p-2">
+        <div className="flex items-center justify-between p-2 min-h-[48px]">
           <div className="flex items-center">
             <div className="text-2xl mr-1">{emojiHTML}</div>
             <div className="text-ellipsis whitespace-nowrap">

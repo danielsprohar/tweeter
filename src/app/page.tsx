@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { FaTwitter } from 'react-icons/fa'
-import EmojiPicker from './components/emoji-picker/EmojiPicker'
+import TweetPoll from './components/tweet-poll/TweetPoll'
 
 export default function Page() {
   return (
@@ -8,7 +8,9 @@ export default function Page() {
       <header className="border-b border-inherit">
         <nav className="flex items-center p-2">
           <div className="py-2 px-4 text-3xl">
-            <FaTwitter />
+            <Link href={'/home'}>
+              <FaTwitter />
+            </Link>
           </div>
           <ul className="flex items-center gap-x-2 list-none ms-auto">
             <li>
@@ -37,8 +39,8 @@ export default function Page() {
         </h1>
         <p>Come check it out.</p>
 
-        <div>
-          <EmojiPicker />
+        <div className="flex items-center justify-center mt-4">
+          <TweetPoll />
         </div>
       </main>
     </div>

@@ -54,8 +54,9 @@ const NAVIGATION_ITEMS = [
 ]
 
 export default function LeftSidebar() {
-  const linkClass = 'dark:hover:bg-white/10 hover:bg-black/10 transition duration-200 px-4 py-2 rounded-full text-lg'
-  const path = usePathname();
+  const path = usePathname()
+  const linkClass =
+    'dark:hover:bg-white/10 hover:bg-black/10 transition duration-200 px-4 py-2 rounded-full text-lg'
 
   return (
     <section className="fixed w-72 h-screen flex flex-col border-r border-black/10 dark:border-white/10">
@@ -65,13 +66,12 @@ export default function LeftSidebar() {
         </div>
         {NAVIGATION_ITEMS.map((item) => {
           const isActive = path.startsWith(item.path)
-          console.log('path', path, 'item.path', item.path)
 
           return (
             <Link
               key={item.title}
               href={item.path}
-              className={ isActive ? `${linkClass} font-bold` : linkClass}
+              className={isActive ? `${linkClass} font-bold` : linkClass}
             >
               <div className="flex items-center gap-x-4">
                 <item.icon /> <span>{item.title}</span>

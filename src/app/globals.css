@@ -25,4 +25,21 @@ body {
   .form-field {
     @apply outline-none border rounded focus:border-2 focus:border-tweeter-blue p-2 bg-inherit border-black/10 dark:border-white/10;
   }
+
+  .form-field-select {
+    @apply flex flex-col flex-grow border rounded border-black/10 dark:border-white/10 p-1;
+  }
+
+  .form-field-select select {
+    @apply bg-inherit outline-none cursor-pointer;
+  }
+
+  .form-field-select label {
+    @apply text-sm dark:text-gray-500 text-gray-900 pl-1;
+  }
+
+  .form-field-select select optgroup,
+  .form-field-select option {
+    @apply bg-white dark:bg-black;
+  }
 }

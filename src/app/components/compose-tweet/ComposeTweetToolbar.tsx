@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { AiOutlineGif } from 'react-icons/ai'
 import { BiPoll } from 'react-icons/bi'
 import { FaSmile } from 'react-icons/fa'
@@ -8,7 +9,6 @@ import { GoFileMedia } from 'react-icons/go'
 import { MdLocationPin } from 'react-icons/md'
 import { TbCalendarTime } from 'react-icons/tb'
 import EmojiPicker from '../emoji-picker/EmojiPicker'
-import { useState } from 'react'
 
 interface ComposeTweetToolbarProps {
   onOpenPoll: () => void

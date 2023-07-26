@@ -61,7 +61,7 @@ export default function LeftSidebar() {
   return (
     <section className="fixed w-72 h-screen flex flex-col border-r border-black/10 dark:border-white/10">
       <div className="flex flex-col gap-y-4 items-stretch h-screen">
-        <div className="py-2 px-4 text-3xl">
+        <div className="py-2 px-4 text-3xl text-tweeter-blue">
           <FaTwitter />
         </div>
         {NAVIGATION_ITEMS.map((item) => {

@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 import { BsCalendarDate } from 'react-icons/bs'
 import { MdClose } from 'react-icons/md'
@@ -33,6 +34,7 @@ interface ScheduledTweetDate {
 }
 
 export default function ScheduledTweet() {
+  const router = useRouter()
   const today = new Date()
   const timezone = new Intl.DateTimeFormat().resolvedOptions().timeZone
   const defaultScheduledDate = new Date(new Date().setDate(today.getDate() + 5))
@@ -75,8 +77,7 @@ export default function ScheduledTweet() {
 
   function handleSelectedDate(event: FormEvent<HTMLInputElement>) {
     const input = event.target as HTMLInputElement
-    // 2023-01-01 (year-month-day)
-    const tokens = input.value.split('-')
+    const tokens = input.value.split('-') // 2023-01-01 (year-month-day)
     const year = parseInt(tokens[0])
     const month = parseInt(tokens[1])
     const date = parseInt(tokens[2])
@@ -86,6 +87,33 @@ export default function ScheduledTweet() {
       year,
       month,
       date,
+    })
+  }
+
+  function handleMonthChange(event: FormEvent<HTMLSelectElement>) {
+    const input = event.target as HTMLInputElement
+    const month = parseInt(input.value)
+    setScheduledDate({
+      ...scheduledDate,
+      month,
+    })
+  }
+
+  function handleDayChange(event: FormEvent<HTMLSelectElement>) {
+    const input = event.target as HTMLInputElement
+    const date = parseInt(input.value)
+    setScheduledDate({
+      ...scheduledDate,
+      date,
+    })
+  }
+
+  function handleYearChange(event: FormEvent<HTMLSelectElement>) {
+    const input = event.target as HTMLInputElement
+    const year = parseInt(input.value)
+    setScheduledDate({
+      ...scheduledDate,
+      year,
     })
   }
 
@@ -107,14 +135,16 @@ export default function ScheduledTweet() {
     })
   }
 
+  function handleBackButton() {
+    router.push('/home')
+  }
+
   return (
-    <div
-      role="dialog"
-      className="flex flex-col rounded-xl border border-black/10 dark:border-white/10 p-2"
-    >
+    <div className="flex flex-col rounded-xl border border-black/10 dark:border-white/10 p-2 bg-white dark:bg-black">
       <div className="flex items-center justify-between py-2">
         <div className="flex items-center gap-x-4">
           <button
+            onClick={handleBackButton}
             title="Close"
             aria-label="Close dialog"
             className="rounded-full dark:hover:bg-white/10 hover:bg-black/10 p-2"
@@ -144,7 +174,11 @@ export default function ScheduledTweet() {
           <div className="flex items-center gap-x-2">
             <div className="form-field-select">
               <label htmlFor="month">Month</label>
-              <select id="month" value={scheduledDate.month - 1}>
+              <select
+                onChange={handleMonthChange}
+                id="month"
+                value={scheduledDate.month - 1}
+              >
                 {MONTHS.map((month: Month) => (
                   <option value={month.value} key={month.value}>
                     {month.displayText}
@@ -154,7 +188,11 @@ export default function ScheduledTweet() {
             </div>
             <div className="form-field-select">
               <label htmlFor="day">Day</label>
-              <select id="day" value={scheduledDate.date}>
+              <select
+                onChange={handleDayChange}
+                id="day"
+                value={scheduledDate.date}
+              >
                 {Array.from({ length: 31 }).map((_, i) => (
                   <option value={i + 1} key={i + 1}>
                     {i + 1}
@@ -164,7 +202,11 @@ export default function ScheduledTweet() {
             </div>
             <div className="form-field-select">
               <label htmlFor="year">Year</label>
-              <select id="year" value={scheduledDate.year}>
+              <select
+                onChange={handleYearChange}
+                id="year"
+                value={scheduledDate.year}
+              >
                 {Array.from({ length: 2 }).map((_, i) => (
                   <option
                     value={today.getFullYear() + i}
@@ -189,7 +231,7 @@ export default function ScheduledTweet() {
                 name="Date"
                 id="datepicker"
                 min={today.toISOString().split('T').at(0)}
-                onInput={handleSelectedDate}
+                onChange={handleSelectedDate}
                 className="opacity-0 absolute top-0 right-0 bottom-0 h-0 w-0"
               />
             </div>
@@ -212,7 +254,7 @@ export default function ScheduledTweet() {
                       : scheduledDate.hour
                     : scheduledDate.hour
                 }
-                onInput={handleHourChange}
+                onChange={handleHourChange}
               >
                 {Array.from({ length: isTwelveHourClock ? 12 : 23 }).map(
                   (_, i) => (
@@ -229,21 +271,20 @@ export default function ScheduledTweet() {
               <select
                 id="minute"
                 value={scheduledDate.minute}
-                onInput={handleMinuteChange}
+                onChange={handleMinuteChange}
               >
-                <optgroup label='Common'>
-                    <option value="0">00</option>
-                    <option value="15">15</option>
-                    <option value="30">30</option>
-                    <option value="45">45</option>
+                <optgroup label="Common">
+                  <option value="0">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
                 </optgroup>
-                <optgroup label='All'>
-
-                {Array.from({ length: 60 }).map((_, i) => (
-                  <option value={i} key={i}>
-                    {i}
-                  </option>
-                ))}
+                <optgroup label="All">
+                  {Array.from({ length: 60 }).map((_, i) => (
+                    <option value={i} key={i}>
+                      {i}
+                    </option>
+                  ))}
                 </optgroup>
               </select>
             </div>

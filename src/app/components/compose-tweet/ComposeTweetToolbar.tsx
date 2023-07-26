@@ -40,6 +40,10 @@ export default function ComposeTweetToolbar({
     router.push('/i/foundmedia/search')
   }
 
+  function handleScheduleTweet() {
+    router.push('/compose/tweet/schedule')
+  }
+
   return (
     <div className="flex items-center justify-between w-full py-2 border-t dark:border-white/10 border-black/10">
       <div className="flex gap-x-2">
@@ -87,6 +91,7 @@ export default function ComposeTweetToolbar({
           </div>
         </div>
         <button
+          onClick={handleScheduleTweet}
           title="Schedule"
           aria-label="Schedule a tweet"
           className="flex gap-x-2 rounded-full w-fit p-2 dark:hover:bg-blue-900/50 dark:text-blue-400 text-tweeter-blue hover:bg-blue-400/20"

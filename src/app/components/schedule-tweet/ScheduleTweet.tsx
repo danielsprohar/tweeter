@@ -33,7 +33,7 @@ interface ScheduledTweetDate {
   minute: number
 }
 
-export default function ScheduledTweet() {
+export default function ScheduleTweet() {
   const router = useRouter()
   const today = new Date()
   const timezone = new Intl.DateTimeFormat().resolvedOptions().timeZone
@@ -140,8 +140,8 @@ export default function ScheduledTweet() {
   }
 
   return (
-    <div className="flex flex-col rounded-xl border border-black/10 dark:border-white/10 p-2 bg-white dark:bg-black">
-      <div className="flex items-center justify-between py-2">
+    <div className="flex flex-col rounded-xl bg-white dark:bg-black w-screen h-screen md:w-[600px] md:h-fit md:mt-12">
+      <div className="flex items-center justify-between py-4 px-2">
         <div className="flex items-center gap-x-4">
           <button
             onClick={handleBackButton}
@@ -158,7 +158,7 @@ export default function ScheduledTweet() {
         </button>
       </div>
 
-      <div className="flex items-center gap-x-4 text-gray-500 p-2">
+      <div className="flex items-center gap-x-4 text-gray-500 p-4">
         <div>
           <TbCalendarTime />
         </div>
@@ -167,7 +167,7 @@ export default function ScheduledTweet() {
         </span>
       </div>
 
-      <div className="flex flex-col gap-y-4 p-2">
+      <div className="flex flex-col gap-y-4 p-4">
         {/* Date portion */}
         <div className="flex flex-col">
           <p className="text-gray-500">Date</p>
@@ -305,6 +305,15 @@ export default function ScheduledTweet() {
             }
           </div>
         </div>
+      </div>
+
+      <div className="border-t border-black/10 dark:border-white/10 p-4">
+        <button
+          onClick={() => router.push('/compose/tweet/unsent/scheduled')}
+          className="rounded-full text-tweeter-blue font-semibold px-3 py-1 dark:hover:bg-tweeter-blue/10"
+        >
+          Scheduled Tweets
+        </button>
       </div>
     </div>
   )

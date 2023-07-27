@@ -7,7 +7,16 @@ interface ModalProps {
 export default function Modal({ children }: ModalProps) {
   return (
     <div className="fixed flex flex-col items-center w-full h-full left-0 top-0 backdrop-contrast-50 z-10">
-      <div className="flex justify-center h-screen w-full">{children}</div>
+      <div className="flex justify-center h-screen w-screen">
+        <div>
+          <div
+            role="dialog"
+            className="rounded-xl bg-white dark:bg-black z-10 w-full md:w-[600px]"
+          >
+            {children}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

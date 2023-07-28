@@ -22,7 +22,7 @@ export default function ComposeTweet() {
   }
 
   return (
-    <div className="border-t border-b border-black/10 dark:border-white/10 p-2">
+    <div className="p-2">
       <div className="flex gap-x-4">
         <div className="rounded-full bg-indigo-500 w-12 h-12 p-2"></div>
         <div className="flex flex-col gap-y-2 w-full">

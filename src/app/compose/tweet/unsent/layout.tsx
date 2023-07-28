@@ -1,11 +1,11 @@
 'use client'
 
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import { IoMdArrowBack } from 'react-icons/io'
 import Home from '../../../components/Home'
 import Modal from '../../../components/Modal'
 import { Children } from '../../../types/children'
-import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
 
 export default function UnsentTweetsLayout({ children }: Children) {
   const router = useRouter()

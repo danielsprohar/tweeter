@@ -1,3 +1,5 @@
+'use client'
+
 import { Children } from '../../types/children'
 
 export default function NavTabs({ children }: Children) {

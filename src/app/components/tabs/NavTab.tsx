@@ -2,19 +2,19 @@
 
 import Link from 'next/link'
 
-type Props = {
+export interface NavTabProps {
   href: string
   displayText: string
   isActive: boolean
   onClick?: (event: any) => void
 }
 
-export default function NavTab({
+export function NavTab({
   href,
   displayText,
   isActive,
   onClick,
-}: Props) {
+}: NavTabProps) {
   return (
     <div className="cursor-pointer w-full flex flex-1 justify-center font-semibold dark:hover:bg-white/10 hover:bg-black/10">
       <Link href={href} onClick={onClick} className="w-full">

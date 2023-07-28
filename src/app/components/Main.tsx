@@ -2,7 +2,7 @@
 
 import Tweet from './Tweet'
 import ComposeTweet from './compose-tweet/ComposeTweet'
-import NavTab from './tabs/NavTab'
+import {NavTab} from './tabs/NavTab'
 import NavTabs from './tabs/NavTabs'
 
 export default function Main() {

@@ -10,8 +10,8 @@ type Props = {
 
 export default function Tweet(props: Props) {
   return (
-    <div
-      className="w-full pt-4 flex border-b border-black/10 dark:border-white/10"
+    <article
+      className="w-full p-4 flex border-b border-black/10 dark:border-white/10"
       key={props.index}
     >
       {/* avatar */}
@@ -112,6 +112,6 @@ export default function Tweet(props: Props) {
           </button>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

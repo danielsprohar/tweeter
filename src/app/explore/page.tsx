@@ -1,7 +1,9 @@
-import React from 'react'
+import Trend from '../components/Trend'
 
 export default function ExplorePage() {
   return (
-    <div>ExplorePage</div>
+    <div className="flex flex-col">
+      <Trend />
+    </div>
   )
 }

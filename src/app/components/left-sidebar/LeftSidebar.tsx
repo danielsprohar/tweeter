@@ -3,17 +3,18 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BiSolidHomeCircle } from 'react-icons/bi'
+
 import {
-  FaBell,
-  FaBookmark,
-  FaEnvelope,
-  FaHashtag,
+  FaRegEnvelope,
   FaTwitter,
   FaUser,
 } from 'react-icons/fa'
 
+import { BsBell, BsBookmark, BsPatchCheck, BsSearch } from 'react-icons/bs'
 import { CgMoreO } from 'react-icons/cg'
+import { RiFileListLine} from 'react-icons/ri'
 import AccountMenu from './AccountMenu'
+import { FiUser, FiUsers } from 'react-icons/fi'
 
 const NAVIGATION_ITEMS = [
   {
@@ -24,27 +25,42 @@ const NAVIGATION_ITEMS = [
   {
     title: 'Explore',
     path: '/explore',
-    icon: FaHashtag,
+    icon: BsSearch,
   },
   {
     title: 'Notifications',
     path: '/notifications',
-    icon: FaBell,
+    icon: BsBell,
   },
   {
     title: 'Messages',
     path: '/messages',
-    icon: FaEnvelope,
+    icon: FaRegEnvelope,
+  },
+  {
+    title: 'Lists',
+    path: '/lists',
+    icon: RiFileListLine
   },
   {
     title: 'Bookmarks',
     path: '/bookmarks',
-    icon: FaBookmark,
+    icon: BsBookmark,
+  },
+  {
+    title: 'Communities',
+    path: '/communities',
+    icon: FiUsers,
+  },
+  {
+    title: 'Verified',
+    path: '/i/verified-choose',
+    icon: BsPatchCheck,
   },
   {
     title: 'Profile',
     path: '/profile',
-    icon: FaUser,
+    icon: FiUser,
   },
   {
     title: 'More',
@@ -60,8 +76,8 @@ export default function LeftSidebar() {
 
   return (
     <section className="fixed w-72 h-screen flex flex-col border-r border-black/10 dark:border-white/10">
-      <div className="flex flex-col gap-y-4 items-stretch h-screen overflow-y-auto">
-        <div className="py-2 px-4 text-3xl text-tweeter-blue">
+      <div className="flex flex-col gap-y-4 items-stretch h-screen overflow-y-auto text-[20px]">
+        <div className="py-2 px-4 text-tweeter-blue text-3xl">
           <FaTwitter />
         </div>
         {NAVIGATION_ITEMS.map((item) => {

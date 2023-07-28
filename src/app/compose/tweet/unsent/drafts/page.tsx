@@ -2,7 +2,7 @@
 
 import NoScheduledTweets from '../../../../components/NoScheduledTweets'
 
-export default function UnsentScheduledTweets() {
+export default function UnsentDraftsPage() {
   return (
     <>
       <NoScheduledTweets />

@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { FaTwitter } from 'react-icons/fa'
-import ScheduledTweet from './components/scheduled-tweet/ScheduledTweet'
 
 export default function Page() {
   return (
     <div className="flex flex-col w-full">
-      <header className="border-b border-black/10 dark:border-white/10">
+      <header className="w-screen border-b border-black/10 dark:border-white/10">
         <nav className="flex items-center p-2">
           <div className="py-2 px-4 text-3xl">
             <Link href={'/home'}>
@@ -39,10 +38,6 @@ export default function Page() {
           <span dangerouslySetInnerHTML={{ __html: '&#35;' }}></span>
           RightInTheTweeter
         </h1>
-
-        <div className="flex items-center justify-center mt-4">
-          <ScheduledTweet />
-        </div>
       </main>
     </div>
   )

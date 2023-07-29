@@ -1,4 +1,4 @@
-export default function NotificationsMentionedPage() {
+export default function NotificationsVerifiedPage() {
   return (
     <div>
       <div className="flex items-center justify-center">

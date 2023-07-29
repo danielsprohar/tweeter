@@ -18,14 +18,14 @@ export default function NotificationsLayout({ children }: Children) {
       isActive: pathName === '/notifications',
     },
     {
-      displayText: 'Mentioned',
-      href: '/notifications/mentioned',
-      isActive: pathName === '/notifications/mentioned',
-    },
-    {
       displayText: 'Verified',
       href: '/notifications/verified',
       isActive: pathName === '/notifications/verified',
+    },
+    {
+      displayText: 'Mentions',
+      href: '/notifications/mentions',
+      isActive: pathName === '/notifications/mentions',
     },
   ]
   return (

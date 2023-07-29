@@ -33,7 +33,7 @@ export default function NotificationsLayout({ children }: Children) {
       <LeftSidebar />
 
       <main className="ml-72 flex-grow">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-4 py-3">
           <h1 className="font-bold text-2xl">Notifications</h1>
 
           <Link
@@ -45,7 +45,7 @@ export default function NotificationsLayout({ children }: Children) {
             <FiSettings />
           </Link>
         </div>
-        <div className="py-2">
+        <div>
           <NavTabs>
             {NAV_TABS.map((tab: NavTabProps, i: number) => (
               <NavTab

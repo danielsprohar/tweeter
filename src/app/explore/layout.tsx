@@ -1,4 +1,5 @@
 'use client'
+
 import Link from 'next/link'
 import { FiSettings } from 'react-icons/fi'
 import SearchTwitter from '../components/SearchTwitter'

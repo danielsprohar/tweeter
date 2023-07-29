@@ -16,7 +16,7 @@ export default function MessagesPage() {
           <div className="flex">
             <Link
               className="text-white bg-tweeter-blue rounded-full px-8 py-4"
-              href={'/messsages/compose'}
+              href={'/messages/compose'}
             >
               <div>
                 <span className="font-bold">New message</span>

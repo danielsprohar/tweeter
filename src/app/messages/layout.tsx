@@ -45,7 +45,7 @@ export default function MessagesPageLayout({ children }: Children) {
           <div className="flex">
             <Link
               className="text-white bg-tweeter-blue rounded-full px-8 py-4"
-              href={'/messsages/compose'}
+              href={'/messages/compose'}
             >
               <div>
                 <span className="font-bold">Write a message</span>

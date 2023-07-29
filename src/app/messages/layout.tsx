@@ -13,7 +13,7 @@ export default function MessagesPageLayout({ children }: Children) {
   return (
     <>
       <LeftSidebar />
-      <main className="ml-72 flex-1 h-screen border-r border-black/10 dark:border-white/10">
+      <section className="ml-72 flex-1 w-full h-screen border-r border-black/10 dark:border-white/10">
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="font-bold text-2xl">Messages</h1>
 
@@ -53,7 +53,7 @@ export default function MessagesPageLayout({ children }: Children) {
             </Link>
           </div>
         </div>
-      </main>
+      </section>
       {children}
     </>
   )

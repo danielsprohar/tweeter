@@ -2,12 +2,23 @@
 
 import { FiMoreHorizontal } from 'react-icons/fi'
 import { PiSmileyAngryBold, PiSmileyMehBold } from 'react-icons/pi'
+import abbreviateNumber from '../../pipes/abbreviate-number.pipe'
 import Menu from './menu/Menu'
-import { MenuTriggerButton } from './menu/MenuTriggerButton'
 import MenuBody from './menu/MenuBody'
 import MenuItem from './menu/MenuItem'
+import { MenuTriggerButton } from './menu/MenuTriggerButton'
 
-export default function Trend() {
+export interface TrendingTopicProps {
+  categoryName: string
+  name: string
+  tweetCount: number
+}
+
+export function TrendingTopic({
+  categoryName,
+  name,
+  tweetCount,
+}: TrendingTopicProps) {
   return (
     <div className="relative cursor-pointer py-3 px-4">
       {/* Menu */}
@@ -39,18 +50,18 @@ export default function Trend() {
 
       {/* Trend details */}
       <div className="flex flex-col">
-        <div className="text-gray-500 text-sm">
+        <div className="text-gray-500 text-sm" data-testid="trendCategory">
           <span
             dangerouslySetInnerHTML={{
-              __html: `categoryName &centerdot; Trending`,
+              __html: `${categoryName} &centerdot; Trending`,
             }}
           ></span>
         </div>
-        <div className="font-semibold">
-          <span>trendName</span>
+        <div className="font-semibold" data-testid="trendName">
+          <span>{name}</span>
         </div>
-        <div className="text-gray-500 text-sm">
-          <span>1000 Tweets</span>
+        <div className="text-gray-500 text-sm" data-testid="trendTweetCount">
+          <span>{abbreviateNumber(tweetCount)} Tweets</span>
         </div>
       </div>
     </div>

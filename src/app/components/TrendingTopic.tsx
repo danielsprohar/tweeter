@@ -20,11 +20,14 @@ export function TrendingTopic({
   tweetCount,
 }: TrendingTopicProps) {
   return (
-    <div className="relative cursor-pointer py-3 px-4">
+    <div className="w-full relative cursor-pointer py-3 px-4">
       {/* Menu */}
       <div className="absolute top-1 right-1">
         <Menu>
-          <MenuTriggerButton ariaLabel="More" title="More">
+          <MenuTriggerButton
+            ariaLabel="More"
+            title="More"
+          >
             <FiMoreHorizontal />
           </MenuTriggerButton>
           <MenuBody>
@@ -50,17 +53,26 @@ export function TrendingTopic({
 
       {/* Trend details */}
       <div className="flex flex-col">
-        <div className="text-gray-500 text-sm" data-testid="trendCategory">
+        <div
+          className="text-gray-500 text-sm"
+          data-testid="trendCategory"
+        >
           <span
             dangerouslySetInnerHTML={{
               __html: `${categoryName} &centerdot; Trending`,
             }}
           ></span>
         </div>
-        <div className="font-semibold" data-testid="trendName">
+        <div
+          className="font-semibold"
+          data-testid="trendName"
+        >
           <span>{name}</span>
         </div>
-        <div className="text-gray-500 text-sm" data-testid="trendTweetCount">
+        <div
+          className="text-gray-500 text-sm"
+          data-testid="trendTweetCount"
+        >
           <span>{abbreviateNumber(tweetCount)} Tweets</span>
         </div>
       </div>

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
 interface Prophet {
-  username: string;
-  handle: string;
+  username: string
+  handle: string
 }
 
 export default function Prophet(prophet: Prophet) {
@@ -11,14 +11,14 @@ export default function Prophet(prophet: Prophet) {
       <div className="flex gap-x-4">
         <div
           data-testid="avatar"
-          className="w-10 h-10 bg-slate-500 rounded-full"
+          className="w-10 h-10 bg-purple-500 rounded-full"
         ></div>
         <div className="flex flex-col">
           <div className="font-semibold">{prophet.username}</div>
           <div className="text-gray-500">
             <span
               dangerouslySetInnerHTML={{
-                __html: "&#64",
+                __html: '&#64',
               }}
             ></span>
             {prophet.handle}
@@ -29,5 +29,5 @@ export default function Prophet(prophet: Prophet) {
         Follow
       </button>
     </div>
-  );
+  )
 }

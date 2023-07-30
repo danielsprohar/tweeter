@@ -2,70 +2,87 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BiSolidHomeCircle } from 'react-icons/bi'
-
+import { BiHomeCircle, BiSolidHomeCircle } from 'react-icons/bi'
 import {
+  BsBell,
+  BsBellFill,
+  BsBookmark,
+  BsBookmarkFill,
+  BsSearch,
+} from 'react-icons/bs'
+import { CgMoreO } from 'react-icons/cg'
+import {
+  FaEnvelope,
   FaRegEnvelope,
+  FaRegUser,
   FaTwitter,
   FaUser,
 } from 'react-icons/fa'
-
-import { BsBell, BsBookmark, BsPatchCheck, BsSearch } from 'react-icons/bs'
-import { CgMoreO } from 'react-icons/cg'
-import { RiFileListLine} from 'react-icons/ri'
+import { MdOutlineVerified, MdVerified } from 'react-icons/md'
+import { PiUsers, PiUsersFill } from 'react-icons/pi'
+import { RiFileListFill, RiFileListLine } from 'react-icons/ri'
 import AccountMenu from './AccountMenu'
-import { FiUser, FiUsers } from 'react-icons/fi'
 
 const NAVIGATION_ITEMS = [
   {
     title: 'Home',
     path: '/home',
-    icon: BiSolidHomeCircle,
+    icon: BiHomeCircle,
+    iconSolid: BiSolidHomeCircle,
   },
   {
     title: 'Explore',
     path: '/explore',
     icon: BsSearch,
+    iconSolid: BsSearch,
   },
   {
     title: 'Notifications',
     path: '/notifications',
     icon: BsBell,
+    iconSolid: BsBellFill,
   },
   {
     title: 'Messages',
     path: '/messages',
     icon: FaRegEnvelope,
+    iconSolid: FaEnvelope,
   },
   {
     title: 'Lists',
     path: '/lists',
-    icon: RiFileListLine
+    icon: RiFileListLine,
+    iconSolid: RiFileListFill,
   },
   {
     title: 'Bookmarks',
     path: '/bookmarks',
     icon: BsBookmark,
+    iconSolid: BsBookmarkFill,
   },
   {
     title: 'Communities',
     path: '/communities',
-    icon: FiUsers,
+    icon: PiUsers,
+    iconSolid: PiUsersFill,
   },
   {
     title: 'Verified',
     path: '/i/verified-choose',
-    icon: BsPatchCheck,
+    icon: MdOutlineVerified,
+    iconSolid: MdVerified,
   },
   {
     title: 'Profile',
     path: '/profile',
-    icon: FiUser,
+    icon: FaRegUser,
+    iconSolid: FaUser,
   },
   {
     title: 'More',
     path: '/more',
     icon: CgMoreO,
+    iconSolid: CgMoreO,
   },
 ]
 
@@ -90,7 +107,16 @@ export default function LeftSidebar() {
               className={isActive ? `${linkClass} font-bold` : linkClass}
             >
               <div className="flex items-center gap-x-4">
-                <item.icon /> <span>{item.title}</span>
+                {isActive ? (
+                  <>
+                    <item.iconSolid />
+                    <span className="font-bold">{item.title}</span>
+                  </>
+                ) : (
+                  <>
+                    <item.icon /> <span>{item.title}</span>
+                  </>
+                )}
               </div>
             </Link>
           )

@@ -1,6 +1,4 @@
-import React from "react";
-
-export default function StatusGrid() {
+export default function UserLatestTweetsGrid() {
   return (
     <div className="flex flex-col w-full gap-y-1 rounded-2xl overflow-hidden">
       <div className="flex h-[96px] gap-x-1">
@@ -14,5 +12,5 @@ export default function StatusGrid() {
         <div className="flex-1 bg-sky-200"></div>
       </div>
     </div>
-  );
+  )
 }

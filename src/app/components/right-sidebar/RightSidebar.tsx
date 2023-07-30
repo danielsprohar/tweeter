@@ -1,13 +1,9 @@
-import SearchTwitter from '../SearchTwitter'
-import StatusGrid from './StatusGrid'
-import SuggestedProphets from './SuggestedProphets'
+import { Children } from '../../types/children'
 
-export default function RightSidebar() {
+export default function RightSidebar({ children }: Children) {
   return (
     <section className="h-screen flex flex-col gap-y-4 p-4 border-l border-black/10 dark:border-white/10">
-      <SearchTwitter />
-      <StatusGrid />
-      <SuggestedProphets />
+      {children}
     </section>
   )
 }

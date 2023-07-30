@@ -3,8 +3,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FiSettings } from 'react-icons/fi'
+import WhatIsHappening from '../../components/WhatIsHappening'
+import SearchTwitter from '../components/SearchTwitter'
 import LeftSidebar from '../components/left-sidebar/LeftSidebar'
 import RightSidebar from '../components/right-sidebar/RightSidebar'
+import SuggestedProphets from '../components/right-sidebar/SuggestedProphets'
 import { NavTab, NavTabProps } from '../components/tabs/NavTab'
 import NavTabs from '../components/tabs/NavTabs'
 import { Children } from '../types/children'
@@ -32,7 +35,7 @@ export default function NotificationsLayout({ children }: Children) {
     <>
       <LeftSidebar />
 
-      <main className="ml-72 flex-grow">
+      <section className="ml-72 flex-grow">
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="font-bold text-2xl">Notifications</h1>
 
@@ -58,9 +61,13 @@ export default function NotificationsLayout({ children }: Children) {
           </NavTabs>
         </div>
         <div>{children}</div>
-      </main>
+      </section>
 
-      <RightSidebar />
+      <RightSidebar>
+        <SearchTwitter />
+        <WhatIsHappening />
+        <SuggestedProphets />
+      </RightSidebar>
     </>
   )
 }

@@ -8,6 +8,8 @@ import NavTabs from '../components/tabs/NavTabs'
 import { Children } from '../types/children'
 
 import { usePathname } from 'next/navigation'
+import RightSidebar from '../components/right-sidebar/RightSidebar'
+import SuggestedProphets from '../components/right-sidebar/SuggestedProphets'
 import { NavTab, NavTabProps } from '../components/tabs/NavTab'
 
 export default function ExplorePageLayout({ children }: Children) {
@@ -43,7 +45,7 @@ export default function ExplorePageLayout({ children }: Children) {
   return (
     <>
       <LeftSidebar />
-      <main className="ml-72 flex-1">
+      <section className="ml-72 flex-1">
         <div className="flex items-center justify-between">
           <div className="px-4 py-2 flex-1">
             <SearchTwitter />
@@ -70,7 +72,10 @@ export default function ExplorePageLayout({ children }: Children) {
           </NavTabs>
         </div>
         {children}
-      </main>
+      </section>
+      <RightSidebar>
+        <SuggestedProphets />
+      </RightSidebar>
     </>
   )
 }

@@ -27,7 +27,7 @@ export default function ListsPage() {
       <div className="flex items-center py-4 px-1">
         <div className="flex">
           <button
-            onClick={() => router.push('/messages')}
+            onClick={() => router.back()}
             title="Close"
             aria-label="Close dialog"
             className="rounded-full p-2 hover:bg-black/10 dark:hover:bg-white/10 text-xl mr-4"

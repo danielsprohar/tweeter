@@ -1,5 +1,5 @@
 import WhatIsHappening from '../../../../components/WhatIsHappening'
-import MainContent from '../../../MainContent'
+import MainContent from '../../../components/MainContent'
 import SearchTwitter from '../../../components/SearchTwitter'
 import LeftSidebar from '../../../components/left-sidebar/LeftSidebar'
 import RightSidebar from '../../../components/right-sidebar/RightSidebar'

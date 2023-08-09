@@ -5,7 +5,7 @@ import SearchTwitter from '../components/SearchTwitter'
 import WhatIsHappening from '../../components/WhatIsHappening'
 import SuggestedProphets from '../components/right-sidebar/SuggestedProphets'
 import { Children } from '../types/children'
-import MainContent from '../MainContent'
+import MainContent from '../components/MainContent'
 
 export const metadata: Metadata = {
   title: 'Bookmarks | Tweeter',

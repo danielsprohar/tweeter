@@ -14,8 +14,8 @@ export default function AccountMenu() {
 
     /**
      * @see https://react.dev/reference/react/useState#setstate-caveats
-     * The set function only updates the state variable for the next render. 
-     * If you read the state variable after calling the set function, 
+     * The set function only updates the state variable for the next render.
+     * If you read the state variable after calling the set function,
      * you will still get the old value that was on the screen before your call.
      */
     if (!isOpen) {
@@ -43,47 +43,72 @@ export default function AccountMenu() {
   }
 
   return (
-    <div
-      aria-label="Account menu"
-      role="button"
-      className={
-        isOpen
-          ? 'relative flex items-center justify-between px-4 py-2 rounded-full w-full'
-          : `relative flex items-center justify-between px-4 py-2 rounded-full w-full ${hoverEffect}`
-      }
-    >
-      <div className="flex gap-x-2">
-        {/* User avatar */}
-        <div className="w-10 h-10 rounded-full bg-slate-300"></div>
+    <>
+      <div className="relative flex items-center justify-center mb-3 lg:hidden">
+        <button onClick={toggleMenu}>
+          <div className="w-10 h-10 rounded-full bg-slate-300"></div>
+        </button>
+        <div
+          className={
+            isOpen
+              ? 'absolute rounded-2xl overflow-hidden shadow-xl dark:shadow-white/10 flex flex-col w-full left-0 right-0 bottom-20 border dark:border-white/10'
+              : 'hidden'
+          }
+          role="menu"
+        >
+          <button
+            role="menuitem"
+            className={`font-bold text-lg p-4 ${hoverEffect}`}
+            onClick={logout}
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+      <div className="hidden lg:block">
+        <div
+          aria-label="Account menu"
+          role="button"
+          className={
+            isOpen
+              ? 'relative flex items-center justify-between px-4 py-2 rounded-full w-full'
+              : `relative flex items-center justify-between px-4 py-2 rounded-full w-full ${hoverEffect}`
+          }
+        >
+          <div className="flex gap-x-2">
+            {/* User avatar */}
+            <div className="w-10 h-10 rounded-full bg-slate-300"></div>
 
-        <div className="flex flex-col">
-          <div className="font-bold">John Doe</div>
-          <div className="font-gray-500">
-            <span dangerouslySetInnerHTML={{ __html: '&#64;' }}></span>
-            johndoe
+            <div className="flex flex-col">
+              <div className="font-bold">John Doe</div>
+              <div className="font-gray-500">
+                <span dangerouslySetInnerHTML={{ __html: '&#64;' }}></span>
+                johndoe
+              </div>
+            </div>
+          </div>
+
+          <button onClick={toggleMenu}>
+            <FiMoreHorizontal />
+          </button>
+          <div
+            className={
+              isOpen
+                ? 'absolute rounded-2xl overflow-hidden shadow-xl dark:shadow-white/10 flex flex-col w-full left-0 right-0 bottom-20 border dark:border-white/10'
+                : 'hidden'
+            }
+            role="menu"
+          >
+            <button
+              role="menuitem"
+              className={`font-bold text-lg p-4 ${hoverEffect}`}
+              onClick={logout}
+            >
+              Logout
+            </button>
           </div>
         </div>
       </div>
-
-      <button onClick={toggleMenu}>
-        <FiMoreHorizontal />
-      </button>
-      <div
-        className={
-          isOpen
-            ? 'absolute rounded-2xl overflow-hidden shadow-xl dark:shadow-white/10 flex flex-col w-full left-0 right-0 bottom-20 border dark:border-white/10'
-            : 'hidden'
-        }
-        role="menu"
-      >
-        <button
-          role="menuitem"
-          className={`font-bold text-lg p-4 ${hoverEffect}`}
-          onClick={logout}
-        >
-          Logout
-        </button>
-      </div>
-    </div>
+    </>
   )
 }

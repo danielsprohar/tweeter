@@ -63,11 +63,19 @@ export default function ScheduleTweet() {
   })
 
   function getFormattedDate() {
-    return dateFormatter.format(defaultScheduledDate)
+    const date = new Date()
+    date.setMonth(scheduledDate.month)
+    date.setDate(scheduledDate.date)
+    date.setFullYear(scheduledDate.year)
+
+    return dateFormatter.format(date)
   }
 
   function getFormattedTime() {
-    return timeFormatter.format(defaultScheduledDate)
+    const date = new Date()
+    date.setHours(scheduledDate.hour)
+    date.setMinutes(scheduledDate.minute)
+    return timeFormatter.format(date)
   }
 
   function handleOpenDatePicker() {
@@ -140,7 +148,7 @@ export default function ScheduleTweet() {
   }
 
   return (
-    <div className="flex flex-col rounded-xl bg-white dark:bg-black w-screen h-screen md:w-[600px] md:h-fit md:mt-12">
+    <div className="flex flex-col rounded-xl bg-white dark:bg-black w-screen h-screen md:w-[600px] md:h-fit">
       <div className="flex items-center justify-between py-4 px-2">
         <div className="flex items-center gap-x-4">
           <button
@@ -180,7 +188,10 @@ export default function ScheduleTweet() {
                 value={scheduledDate.month - 1}
               >
                 {MONTHS.map((month: Month) => (
-                  <option value={month.value} key={month.value}>
+                  <option
+                    value={month.value}
+                    key={month.value}
+                  >
                     {month.displayText}
                   </option>
                 ))}
@@ -194,7 +205,10 @@ export default function ScheduleTweet() {
                 value={scheduledDate.date}
               >
                 {Array.from({ length: 31 }).map((_, i) => (
-                  <option value={i + 1} key={i + 1}>
+                  <option
+                    value={i + 1}
+                    key={i + 1}
+                  >
                     {i + 1}
                   </option>
                 ))}
@@ -258,7 +272,10 @@ export default function ScheduleTweet() {
               >
                 {Array.from({ length: isTwelveHourClock ? 12 : 23 }).map(
                   (_, i) => (
-                    <option value={i + 1} key={i + 1}>
+                    <option
+                      value={i + 1}
+                      key={i + 1}
+                    >
                       {i + 1}
                     </option>
                   )
@@ -281,7 +298,10 @@ export default function ScheduleTweet() {
                 </optgroup>
                 <optgroup label="All">
                   {Array.from({ length: 60 }).map((_, i) => (
-                    <option value={i} key={i}>
+                    <option
+                      value={i}
+                      key={i}
+                    >
                       {i}
                     </option>
                   ))}

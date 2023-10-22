@@ -129,7 +129,7 @@ export default function LeftSidebar() {
         })}
 
         <div className="flex">
-          <button className="hidden w-100 rounded-full mx-4 py-4 text-center bg-tweeter-blue text-white hover:bg-opacity-80 font-semibold lg:block">
+          <button className="hidden w-full rounded-full mx-4 py-4 text-center bg-tweeter-blue text-white hover:bg-opacity-80 font-semibold lg:block">
             Tweet
           </button>
           <button

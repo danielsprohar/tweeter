@@ -4,7 +4,7 @@ import { FaTwitter } from 'react-icons/fa'
 export default function Page() {
   return (
     <div className="flex flex-col w-full">
-      <header className="w-screen border-b border-black/10 dark:border-white/10">
+      <header className="border-b border-black/10 dark:border-white/10">
         <nav className="flex items-center p-2">
           <div className="py-2 px-4 text-3xl">
             <Link href={'/home'}>
@@ -34,10 +34,18 @@ export default function Page() {
         </nav>
       </header>
       <main className="p-2">
-        <h1 className="text-2xl text-tweeter-blue text-center">
+        <h1 className="text-2xl text-tweeter-blue text-center mb-4">
           <span dangerouslySetInnerHTML={{ __html: '&#35;' }}></span>
           RightInTheTweeter
         </h1>
+
+        <p>
+          This is a Twitter clone built with Next.js 13. This is for
+          demonstration purposes <em>only</em>.
+        </p>
+        <Link className="text-tweeter-blue hover:underline" href={'/home'}>
+          See what's happening in the world right now
+        </Link>
       </main>
     </div>
   )

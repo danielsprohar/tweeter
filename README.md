@@ -4,6 +4,20 @@ As the title suggests, this is a Twitter clone built with Next.js 13 using React
 
 ## Images
 
+### Compose Tweet
+
+#### Emoji Picker
+
+![Compose Tweet - Emoji Picker](docs/images/emoji-picker.png)
+
+#### Poll
+
+![Compose Tweet - Poll](docs/images/tweet-poll.png)
+
+#### Schedule Tweet
+
+![Compose Tweet - Schedule Tweet](docs/images/schedule-tweet.png)
+
 ### Home Page
 
 ![Home Page](docs/images/home-page.png)

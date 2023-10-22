@@ -10,10 +10,7 @@ export default function GifSearchPage() {
 
   return (
     <Modal>
-      <div
-        role="dialog"
-        className="md:mt-12 md:w-[650px] md:h-[600px] overflow-hidden rounded-xl"
-      >
+      <div className="md:h-[600px] overflow-hidden rounded-xl">
         <div className="w-full h-full rounded-xl overflow-y-scroll dark:bg-black dark:text-white bg-white text-black">
           <section className="flex items-center gap-x-4 my-2 px-2">
             <button
@@ -22,7 +19,7 @@ export default function GifSearchPage() {
             >
               <AiOutlineClose />
             </button>
-            <div className="flex-grow">
+            <div className="flex-1">
               <input
                 type="text"
                 name="gifQuery"

@@ -14,7 +14,7 @@ export default function ListsPageLayout({ children }: Children) {
   return (
     <>
       <LeftSidebar />
-      <section className="ml-72 flex flex-grow">{children}</section>
+      <section className="ml-20 lg:ml-72 flex flex-grow">{children}</section>
       <RightSidebar>
         <SearchTwitter />
         <WhatIsHappening />

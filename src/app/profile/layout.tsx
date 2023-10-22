@@ -14,7 +14,7 @@ export default function ProfileLayout({ children }: Children) {
   return (
     <>
       <LeftSidebar />
-      <section className="ml-72 flex-1">{children}</section>
+      <section className="ml-20 lg:ml-72 flex-1">{children}</section>
       <RightSidebar>
         <SearchTwitter />
         <WhatIsHappening />

@@ -35,7 +35,7 @@ export default function NotificationsLayout({ children }: Children) {
     <>
       <LeftSidebar />
 
-      <section className="ml-72 flex-grow">
+      <section className="ml-20 lg:ml-72 flex-grow">
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="font-bold text-2xl">Notifications</h1>
 

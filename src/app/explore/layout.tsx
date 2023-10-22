@@ -45,7 +45,7 @@ export default function ExplorePageLayout({ children }: Children) {
   return (
     <>
       <LeftSidebar />
-      <section className="ml-72 flex-1">
+      <section className="ml-20 lg:ml-72 flex-1">
         <div className="flex items-center justify-between">
           <div className="px-4 py-2 flex-1">
             <SearchTwitter />

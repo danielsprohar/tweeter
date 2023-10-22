@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import WhatIsHappening from '../../components/WhatIsHappening'
+import MainContent from '../components/MainContent'
 import SearchTwitter from '../components/SearchTwitter'
 import LeftSidebar from '../components/left-sidebar/LeftSidebar'
 import RightSidebar from '../components/right-sidebar/RightSidebar'
@@ -14,7 +15,7 @@ export default function ListsPageLayout({ children }: Children) {
   return (
     <>
       <LeftSidebar />
-      <section className="ml-20 lg:ml-72 flex flex-grow">{children}</section>
+      <MainContent>{children}</MainContent>
       <RightSidebar>
         <SearchTwitter />
         <WhatIsHappening />

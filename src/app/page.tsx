@@ -13,7 +13,7 @@ export default function Page() {
               </div>
             </Link>
           </div>
-          <ul className="flex items-center gap-x-2 list-none ms-auto">
+          {/* <ul className="flex items-center gap-x-2 list-none ms-auto">
             <li>
               <Link
                 className="px-4 py-2 border dark:border-white/10 border-black/10 rounded hover:bg-black/10 dark:hover:bg-white/10"
@@ -30,7 +30,7 @@ export default function Page() {
                 Sign up
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </nav>
       </header>
       <main className="p-2">
@@ -39,13 +39,18 @@ export default function Page() {
           RightInTheTweeter
         </h1>
 
-        <p>
-          This is a Twitter clone built with Next.js 13. This is for
-          demonstration purposes <em>only</em>.
-        </p>
-        <Link className="text-tweeter-blue hover:underline" href={'/home'}>
-          See what's happening in the world right now
-        </Link>
+        <div className="flex flex-col items-center">
+          <p>
+            This is a Twitter clone built with Next.js 13. This is for
+            demonstration purposes <em>only</em>.
+          </p>
+          <Link
+            className="text-tweeter-blue hover:underline"
+            href={'/home'}
+          >
+            See what's happening in the world right now
+          </Link>
+        </div>
       </main>
     </div>
   )

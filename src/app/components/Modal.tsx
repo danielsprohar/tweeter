@@ -11,7 +11,7 @@ export default function Modal({ children }: ModalProps) {
         <div className="flex flex-col items-center justify-center">
           <div
             role="dialog"
-            className="overflow-hidden rounded-xl bg-white dark:bg-black z-10 w-full md:w-[600px] md:h-[600px]"
+            className="overflow-hidden rounded-xl bg-white dark:bg-black z-10 w-full md:w-[600px]"
           >
             {children}
           </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { FormEvent, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { BsCalendarDate } from 'react-icons/bs'
 import { MdClose } from 'react-icons/md'
 import { TbCalendarTime } from 'react-icons/tb'
@@ -38,8 +38,23 @@ export default function ScheduleTweet() {
   const today = new Date()
   const timezone = new Intl.DateTimeFormat().resolvedOptions().timeZone
   const defaultScheduledDate = new Date(new Date().setDate(today.getDate() + 5))
-  const isTwelveHourClock = navigator.language.includes('en')
-  const dateFormatter = new Intl.DateTimeFormat(navigator.language, {
+
+  const [isTwelveHourClock, setIsTwelveHourClock] = useState<boolean>(false)
+  const [language, setLanguage] = useState<string>('en')
+  const [scheduledDate, setScheduledDate] = useState<ScheduledTweetDate>({
+    month: defaultScheduledDate.getMonth() + 1,
+    date: defaultScheduledDate.getDate(),
+    year: defaultScheduledDate.getFullYear(),
+    hour: defaultScheduledDate.getHours(),
+    minute: defaultScheduledDate.getMinutes(),
+  })
+
+  useEffect(() => {
+    setIsTwelveHourClock(navigator.language.includes('en'))
+    setLanguage(navigator.language)
+  })
+
+  const dateFormatter = new Intl.DateTimeFormat(language, {
     weekday: 'short',
     month: 'short',
     day: '2-digit',
@@ -47,19 +62,11 @@ export default function ScheduleTweet() {
     timeZone: timezone,
   })
 
-  const timeFormatter = new Intl.DateTimeFormat(navigator.language, {
+  const timeFormatter = new Intl.DateTimeFormat(language, {
     hour: 'numeric',
     minute: '2-digit',
     hour12: isTwelveHourClock,
     timeZone: timezone,
-  })
-
-  const [scheduledDate, setScheduledDate] = useState<ScheduledTweetDate>({
-    month: defaultScheduledDate.getMonth() + 1,
-    date: defaultScheduledDate.getDate(),
-    year: defaultScheduledDate.getFullYear(),
-    hour: defaultScheduledDate.getHours(),
-    minute: defaultScheduledDate.getMinutes(),
   })
 
   function getFormattedDate() {

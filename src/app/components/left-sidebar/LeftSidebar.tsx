@@ -92,7 +92,7 @@ export default function LeftSidebar() {
     'dark:hover:bg-white/10 hover:bg-black/10 transition duration-200 px-4 py-2 rounded-full text-lg'
 
   return (
-    <section className="hidden md:flex fixed w-20 lg:w-72 h-screen flex-col border-r border-black/10 dark:border-white/10">
+    <section className="hidden sm:flex fixed w-20 lg:w-72 h-screen flex-col border-r border-black/10 dark:border-white/10">
       <div className="flex flex-col gap-y-4 items-center h-screen overflow-y-auto text-[20px] lg:items-stretch">
         <div className="py-2 px-4 text-tweeter-blue text-3xl">
           <FaTwitter />

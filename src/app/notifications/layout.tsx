@@ -11,6 +11,7 @@ import SuggestedProphets from '../components/right-sidebar/SuggestedProphets'
 import { NavTab, NavTabProps } from '../components/tabs/NavTab'
 import NavTabs from '../components/tabs/NavTabs'
 import { Children } from '../types/children'
+import MainContent from '../components/MainContent'
 
 export default function NotificationsLayout({ children }: Children) {
   const pathName = usePathname()
@@ -35,7 +36,7 @@ export default function NotificationsLayout({ children }: Children) {
     <>
       <LeftSidebar />
 
-      <section className="ml-20 lg:ml-72 flex-grow">
+      <MainContent>
         <div className="flex items-center justify-between px-4 py-3">
           <h1 className="font-bold text-2xl">Notifications</h1>
 
@@ -61,7 +62,7 @@ export default function NotificationsLayout({ children }: Children) {
           </NavTabs>
         </div>
         <div>{children}</div>
-      </section>
+      </MainContent>
 
       <RightSidebar>
         <SearchTwitter />
